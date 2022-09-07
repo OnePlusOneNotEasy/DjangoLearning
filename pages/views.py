@@ -12,3 +12,10 @@ def contact_view(request, * args, ** kwargs):
 
 def template_view(request, *args, ** kwargs):
     return render(request, "template.html", {})
+
+def about_view(request, * args, ** kwargs):
+    my_context = {
+        "my_name":"Peter",
+        "my_number":"758200181"
+    }
+    return render(request, 'about.html', my_context)
