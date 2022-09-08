@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 
 # Create your models here.
 class Fruit(models.Model):
@@ -10,3 +11,8 @@ class Fruit(models.Model):
     SUMMARY_CHOICES = [(GOOD, 'good'),(BAD, 'bad')]
     summary = models.TextField(choices=SUMMARY_CHOICES, default=GOOD)
     buy = models.BooleanField(default=False) # null=True, default=True
+
+    def get_absolute_url(self):
+        # return reverse('fruits-show', kwargs={'my_id':self.id})
+        # return f"/fruits/{self.id}/"
+        return reverse('fruit:fruits-detail', kwargs={'my_id':self.id})
