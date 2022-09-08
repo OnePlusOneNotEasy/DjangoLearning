@@ -1,6 +1,22 @@
 {% extends 'base.html' %}
 
+
 {% block content%}
 <p>This is cool!</p>
-<p>{{my_name}},{{my_number}}</p>
+
+<p>{{my_name |capfirst }},{{my_number}}</p>
+
+<ul>
+{% for my_friend in my_friends %}
+{% if my_friend == 'Tom' %}
+<li>{{my_friend}} is smart.</li>
+{% elif my_friend == 'Mary'%}
+<li>{{my_friend}} is bad.</li>
+{% else %}
+<li>{{my_friend}} is good.</li>
+{% endif%}
+{% endfor%}
+</ul>
+
+{{my_html |safe}}
 {% endblock%}

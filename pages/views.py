@@ -15,7 +15,9 @@ def template_view(request, *args, ** kwargs):
 
 def about_view(request, * args, ** kwargs):
     my_context = {
-        "my_name":"Peter",
-        "my_number":"758200181"
+        "my_name":"peter",
+        "my_number":"758200181",
+        "my_friends":['Jack', 'Tom', 'Mary'],
+        "my_html":"<h1>My name is Peter Yang.</h1>"
     }
     return render(request, 'about.html', my_context)

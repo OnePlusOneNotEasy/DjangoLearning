@@ -9,4 +9,4 @@ class Fruit(models.Model):
     BAD = 'B'
     SUMMARY_CHOICES = [(GOOD, 'good'),(BAD, 'bad')]
     summary = models.TextField(choices=SUMMARY_CHOICES, default=GOOD)
-    buy = models.BooleanField() # null=True, default=True
+    buy = models.BooleanField(default=False) # null=True, default=True
