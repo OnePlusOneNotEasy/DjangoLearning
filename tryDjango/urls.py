@@ -20,6 +20,8 @@ from pages.views import home_view, contact_view, template_view, about_view
 
 urlpatterns = [
     path('fruits/', include('fruit.urls')),
+    path('blog/', include('Blog.urls')),
+    path('course/', include('courses.urls')),
     path('admin/', admin.site.urls),
     path('', home_view, name='home'),
     path('contact/', contact_view, name='contact'),
